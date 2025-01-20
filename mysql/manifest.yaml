@@ -52,6 +52,13 @@ spec:
       containers:
       - name: mysql
         image: yashdwar/mysql:v2
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
@@ -59,7 +66,7 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: mysql
-      namespace: expense
+      # namespace: expense
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: "expense-ebs-voulmes"
