@@ -40,7 +40,7 @@ spec:
       purpose: expense
       component: mysql
       tier: db # has to match .spec.template.metadata.labels
-  serviceName: "mysql-headless" #this is headleess service which has to be mentioned for statefulset
+  serviceName: mysql-headless #this is headleess service which has to be mentioned for statefulset
   replicas: 3
   template:
     metadata:
